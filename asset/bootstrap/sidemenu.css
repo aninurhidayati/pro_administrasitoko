@@ -1,0 +1,28 @@
+.sidebar{
+    border: 20px;
+}
+.sidebar header{
+font-size: 22px;
+color: white;
+text-align: center;
+line-height: center;
+background: red ;
+user-select: none;
+}
+.sidebar ul a{
+display:block;
+height: 100%;
+width: 100%;
+line-height: 65px;
+font-size: 20px;
+padding-left:40px;
+box-sizing: border-box;
+border-top: 1px solid rgba(red, green, blue, alpha);
+border-bottom: 1px solid black;
+}
+
+.sidebar li {
+border: 10px;
+background-color: bisque;
+}
+
