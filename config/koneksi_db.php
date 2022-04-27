@@ -1,6 +1,6 @@
 <?php
 $servername ="localhost";
-$database ="dblatihan";
+$database ="dbtokobaju";
 $userdb ="root";
 $pass_db ="" ;
 

@@ -12,7 +12,7 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
 }else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     $judul = "form edit data" ;
     $idkey = $_GET['id'];
-    $qdata = mysqli_query($connect_db,"select * from mst_menu where id_menu=$idkey") or die(mysqli_error($connect_db));
+    $qdata = mysqli_query($connect_db,"select * from tb_kt_barang where id_kt_barang=$idkey") or die(mysqli_error($connect_db));
     $data = mysqli_fetch_array($qdata);
     $aktif = $data['is_active'];
     if($aktif == 1){
@@ -22,17 +22,17 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
     }
 }else if (isset($_GET['act']) && ($_GET['act']== "save")){
     /*echo "Proses berhasil" ;*/
-    $namamenu = $_POST['txt_nmmenu'];
-    $ling = $_POST['txt_link'];
+    $idkatbarang = $_POST['id_kt_barang'] ;
+    $katbarang = $_POST['kat_barang'];
     /*$aktif = $_POST['ck_aktif'];*/
     if(isset($_POST['ck_aktif'])){
         $aktif = 1 ;
     }else{
         $aktif = 0 ;
     }
-    echo $namamenu ; 
-    mysqli_query($connect_db,"insert into mst_menu(nama_menu,link,is_active)
-    values ('$namamenu','$ling',$aktif)") or die(mysqli_error($connect_db))
+    echo $idkatbarang;
+    mysqli_query($connect_db,"insert into tb_kt_barang(id_kt_barang,kategori_barang)
+    values ('$idkatbarang','$katbarang')") or die(mysqli_error($connect_db))
     ; 
 }else if(isset($_GET['act']) && ($_GET['act']== "update")){
 
