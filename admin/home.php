@@ -17,7 +17,7 @@ require_once('../config/config.php') ;
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="color:white ;"> <b>  Selamat Datang Admin || Toko Baju Tim 1 </b></a>
+    <a class="navbar-brand" href="#" style="color:white ;"> <b>  Selamat Datang Admin...</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,7 +30,7 @@ require_once('../config/config.php') ;
     </div>
   </div>
 </nav>
-   <div class="row pt-5">
+   <div class="row pt-4">
        <div class="col-md-2" style="background-color: blue;"> 
         <div> 
             <?php

@@ -8,6 +8,7 @@ if(!isset($_GET['act'])){
         <th> ID Barang</th>
         <th> Nama Barang</th>
         <th> Jumlah Barang</th>
+        <th> Action </th>
     </tr>
     <?php
     $qry_dt_member= mysqli_query($connect_db,"select * from tb_dt_barang order by id_barang DESC")or die("gagal akses tabel tb_dt_barang".mysqli_error($connect_db));
