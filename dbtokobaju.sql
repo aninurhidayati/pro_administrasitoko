@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2022 at 04:34 PM
+-- Generation Time: May 05, 2022 at 01:29 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -41,7 +41,9 @@ CREATE TABLE `tb_dt_barang` (
 INSERT INTO `tb_dt_barang` (`id_barang`, `nama_barang`, `jumlah_barang`, `is_active`) VALUES
 (1, 'Celana', 2, 0),
 (2, 'Baju muslim', 3, 0),
-(3, 'Baju Kristen', 21, 1);
+(3, 'Baju Kristen', 21, 1),
+(4, 'Baju buddha', 4, 0),
+(5, 'Celana levis', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -62,11 +64,11 @@ CREATE TABLE `tb_dt_member` (
 --
 
 INSERT INTO `tb_dt_member` (`id_member`, `nama_member`, `jenis_kelamin`, `alamat`, `pekerjaan`) VALUES
+(0, 'densa fiksi defsig', 'peremepuan', 'jln cinta ku hanya untukmu blok ilu no 1', 'dokter'),
 (1, 'Muhammad Ardiansyah', 'Laki-laki', 'pandaan', 'mahasiswa'),
 (9, 'Putra', 'lk', 'GSK', 'MHS'),
-(10, 'ardi', '', '', ''),
-(11, 'Nisaul', 'Perempuan', 'Jonggol', 'Mahasiswa '),
-(12, 'Dita', 'Perempuan', 'Jonggol', 'Mahasiswa');
+(10, 'ardi', 'laki-laki', 'surabaya', 'mahasiswa'),
+(11, 'Nisaul', 'Perempuan', 'Jonggol', 'Mahasiswa ');
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,8 @@ CREATE TABLE `tb_dt_pembelian` (
 INSERT INTO `tb_dt_pembelian` (`no_trans`, `nama_barang`, `harga_barang`, `jumlah`, `total`) VALUES
 (1, 'Celana', 50000, 2, 100000),
 (2, 'Kopiah', 10000, 2, 20000),
-(3, 'sarung', 22000, 1, 22000);
+(3, 'Sarung', 22000, 1, 22000),
+(4, 'Surban', 25000, 2, 50000);
 
 -- --------------------------------------------------------
 
@@ -99,16 +102,19 @@ INSERT INTO `tb_dt_pembelian` (`no_trans`, `nama_barang`, `harga_barang`, `jumla
 
 CREATE TABLE `tb_kt_barang` (
   `id_kt_barang` int(100) NOT NULL,
-  `kategori_barang` varchar(100) NOT NULL
+  `kategori_barang` varchar(100) NOT NULL,
+  `made_from` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_kt_barang`
 --
 
-INSERT INTO `tb_kt_barang` (`id_kt_barang`, `kategori_barang`) VALUES
-(1, 'Pakaian'),
-(3, 'underwear');
+INSERT INTO `tb_kt_barang` (`id_kt_barang`, `kategori_barang`, `made_from`) VALUES
+(1, 'Pakaian', 'import'),
+(2, 'Topi', 'import'),
+(3, 'Underwear', 'export'),
+(4, 'Kaos-kaki', 'import');
 
 -- --------------------------------------------------------
 
@@ -154,7 +160,9 @@ CREATE TABLE `tb_userlogin` (
 INSERT INTO `tb_userlogin` (`id_user`, `username`, `password`, `is_active`) VALUES
 (1, 'arudi', '123', 1),
 (2, 'putra', '123', 0),
-(3, 'anon', '123', 1);
+(3, 'anon', '123', 1),
+(4, 'asdsg', 'aselole', 1),
+(5, 'aoi sora', 'ikeh2 kimochi', 0);
 
 --
 -- Indexes for dumped tables
@@ -204,25 +212,25 @@ ALTER TABLE `tb_userlogin`
 -- AUTO_INCREMENT for table `tb_dt_barang`
 --
 ALTER TABLE `tb_dt_barang`
-  MODIFY `id_barang` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_barang` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_dt_member`
 --
 ALTER TABLE `tb_dt_member`
-  MODIFY `id_member` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_member` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_dt_pembelian`
 --
 ALTER TABLE `tb_dt_pembelian`
-  MODIFY `no_trans` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `no_trans` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_kt_barang`
 --
 ALTER TABLE `tb_kt_barang`
-  MODIFY `id_kt_barang` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kt_barang` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_submenu`
@@ -234,7 +242,7 @@ ALTER TABLE `tb_submenu`
 -- AUTO_INCREMENT for table `tb_userlogin`
 --
 ALTER TABLE `tb_userlogin`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
