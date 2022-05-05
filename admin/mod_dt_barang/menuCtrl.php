@@ -32,10 +32,29 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
         $aktif = 0 ;
     }
     echo $namabarang;
-    mysqli_query($connect_db,"insert into tb_dt_barang(nama_barang,jumlah_barang)
-    values ('$namabarang','$jmlbrg')") or die(mysqli_error($connect_db))
-    ; 
+    $qinsert = mysqli_query($connect_db,"INSERT into tb_dt_barang(id_barang,nama_barang,jumlah_barang)
+    VALUES ('$idbarang','$namabarang','$jmlbrg')") or die(mysqli_error($connect_db));
+    if($qinsert){
+		//ketik proses simpan berhasil
+		header("Location: http://localhost/pro_administrasitoko/admin/home.php?modul=mod_dt_barang");
+	}
 }else if(isset($_GET['act']) && ($_GET['act']== "update")){
-
-}   
+    $in_idbrg =$_POST['id_barang'];
+    $in_nmbrg =$_POST['nm_barang'];
+    $in_jmlbrg =$_POST['jml_brg'];
+    $qinsert = mysqli_query(
+        $connect_db, "UPDATE tb_dt_barang SET nama_barang='$in_nmbrg', jumlah_barang='$in_jmlbrg' WHERE id_barang='$in_idbrg'")
+		or die (mysqli_error($connect_db));
+	if($qinsert){
+		//ketik proses simpan update berhasil
+		header("Location: http://localhost/pro_administrasitoko/admin/home.php?modul=mod_dt_barang");
+	}
+}else if(isset($_GET['act']) && ($_GET['act']== "delete")){
+	//jika ada send variabel act=edit, tampil form edit/ubah data
+	$idkey = $_GET['id']; //dapat dari URL
+	$qdelete = mysqli_query($connect_db,"DELETE from tb_dt_barang where id_barang=$idkey")or die(mysqli_error($connect_db));
+	if($qdelete){
+		header("Location: http://localhost/pro_administrasitoko/admin/home.php?modul=mod_dt_barang");
+	}
+}
 ?>

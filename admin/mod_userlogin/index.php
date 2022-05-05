@@ -23,7 +23,7 @@ if(!isset($_GET['act'])){
         <td>
             <div class="d-grid gap-1 d-md-block">
             <a href="?modul=mod_userlogin&act=edit&id=<?= $row['id_user']; ?>" class="btn btn-xs btn-primary"> <i class="bi bi-pencil-square" > </i> edit </a>
-            <a href="" class="btn btn-xs btn-primary"> <i class="bi bi-trash-3"> </i> Hapus </a>
+            <a href="?modul=mod_userlogin&act=delete&id=<?= $row["id_user"]; ?>" class="btn btn-xs btn-warning bg-21"> <i class="bi bi-x-lg"></i> Delete</a>
             </div>
       </td>
     </tr>
@@ -42,7 +42,7 @@ if(!isset($_GET['act'])){
     <label for="username" class="form-label" name="id_user"> ID User </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="id_user" class="form-control">  
+    <input type="text "name="id_user" class="form-control">
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -63,19 +63,19 @@ if(!isset($_GET['act'])){
     <input type="text "name="password" class="form-control">  
     </div>
  </div>
- <div class="row pt-2">
+ <!-- <div class="row pt-2">
     <div class="col-md-2"> 
     <label for="username" class="form-label" name="is_active" > Is Active </label>
   </div>  
   <div class="col-md-5"> 
     <input type="text "name="is_active" class="form-control">  
     </div>
- </div>
+ </div> -->
     <div class="row pt-2">
     <div class="col-md-2"> 
   </div>  
   <div class="col-md-5"> 
-   <input type="checkbox" name="ck_aktif"/> active
+   <input type="checkbox" name="is_active">active
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -84,7 +84,7 @@ if(!isset($_GET['act'])){
    </div>  
     <div class="col-md-5"> 
     <div class="d-grid gap-2 d-md-block">
-    <button class="btn btn-secondary" type="reset" ><i class="bi bi-x" name="reset" > </i> Batal </button>
+    <a href="?modul=mod_userlogin" type="cancel" class="btn btn-secondary"><i class="bi bi-door-open"></i> Kembali</a>
     <button class="btn btn-primary" type="submit"><i class="bi bi-download" name="simpan" > </i> Simpan </button>
     </div>
     <div class="col-md-1"></div>
@@ -99,13 +99,13 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
 ?>
 <div class="row">
     <h3><?php echo $judul; ?></h3>
-    <form action="mod_userlogin/menuCtrl.php?modul=mod_userlogin&act=save" method="post">
+    <form action="mod_userlogin/menuCtrl.php?modul=mod_menu&act=update" method="POST">
     <div class="row pt-2">
     <div class="col-md-2"> 
     <label for="username" class="form-label" name="id_user"> ID User </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="id_user" class="form-control">  
+    <input type="text "name="id_user" class="form-control" value="<?php echo $data['id_user']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -114,7 +114,7 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <label for="username" class="form-label" name="username" > Username </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="username" class="form-control">  
+    <input type="text "name="username" class="form-control" value="<?php echo $data['username']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -123,21 +123,21 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <label for="username" class="form-label" name="password" > Password </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="password" class="form-control">  
+    <input type="text "name="password" class="form-control" value="<?php echo $data['password']; ?>">  
     </div>
-    <div class="row pt-2">
+    <!-- <div class="row pt-2">
     <div class="col-md-2"> 
     <label for="username" class="form-label" name="is_active" > Is_Active </label>
   </div>  
   <div class="col-md-5"> 
     <input type="text "name="is_active" class="form-control">  
     </div>
- </div>
+ </div> -->
     <div class="row pt-2">
     <div class="col-md-2"> 
   </div>  
   <div class="col-md-5"> 
-   <input type="checkbox" name="ck_aktif"/> active
+   <input type="checkbox" name="is_active" <?php echo $data['is_active'] == 1 ? "checked" : "" ?>> active
     </div>
     <div class="col-md-1"></div>
     </div>

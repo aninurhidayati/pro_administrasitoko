@@ -25,7 +25,7 @@ if(!isset($_GET['act'])){
         <td>
             <div class="d-grid gap-1 d-md-block">
             <a href="?modul=mod_dt_member&act=edit&id=<?= $row['id_member']; ?>" class="btn btn-xs btn-primary"> <i class="bi bi-pencil-square" > </i> edit </a>
-            <a href="" class="btn btn-xs btn-primary"> <i class="bi bi-trash-3"> </i> Hapus </a>
+            <a href="?modul=mod_dt_member&act=delete&id=<?= $row['id_member']; ?>" class="btn btn-xs btn-warning "> <i class="bi bi-x-lg"></i> Delete</a>
             </div>
       </td>
     </tr>
@@ -44,7 +44,7 @@ if(!isset($_GET['act'])){
     <label for="username" class="form-label" name="id_member"> ID Member </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="id_member" class="form-control">  
+    <input type="text "name="id_member" class="form-control" >  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -111,13 +111,13 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
 ?>
 <div class="row">
     <h3><?php echo $judul; ?></h3>
-    <form action="mod_dt_member/menuCtrl.php?modul=mod_dt_member&act=save" method="post">
+    <form action="mod_dt_member/menuCtrl.php?modul=mod_dt_member&act=update" method="post">
     <div class="row pt-2">
     <div class="col-md-2"> 
     <label for="username" class="form-label" name="id_member"> ID Member </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="id_member" class="form-control">  
+    <input type="text "name="id_member" class="form-control" value="<?php echo $data['id_member']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -126,16 +126,16 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <label for="username" class="form-label" name="nm_member" > Nama Member </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="nm_member" class="form-control">  
+    <input type="text "name="nm_member" class="form-control" value="<?php echo $data['nama_member']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
     <div class="row pt-2">
     <div class="col-md-2"> 
-    <label for="username" class="form-label" name="jk" > Jenis Kelamin </label>
+    <label for="username" class="form-label" name="jk"> Jenis Kelamin </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="jk" class="form-control">  
+    <input type="text "name="jk" class="form-control" value="<?php echo $data['jenis_kelamin']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -144,7 +144,7 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <label for="username" class="form-label" name="alamat" > Alamat </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text "name="alamat" class="form-control">  
+    <input type="text "name="alamat" class="form-control" value="<?php echo $data['alamat']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
@@ -153,7 +153,7 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <label for="username" class="form-label" name="pekerjaan" > Pekerjaan </label>
   </div>  
   <div class="col-md-5"> 
-    <input type="text" name="pekerjaan" class="form-control">  
+    <input type="text" name="pekerjaan" class="form-control" value="<?php echo $data['pekerjaan']; ?>">  
     </div>
     <div class="col-md-1"></div>
     </div>
