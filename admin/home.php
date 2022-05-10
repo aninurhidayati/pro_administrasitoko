@@ -25,7 +25,7 @@ require_once('../config/config.php') ;
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto mb-2 mb">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">  <b> | Sign Out</b></a>
+          <a class="nav-link active" aria-current="page" href="../admin/index.php" style="color: white;">  <b> | Sign Out</b></a>
         </li>
       </ul>
     </div>

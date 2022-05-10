@@ -14,13 +14,13 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
     $idkey = $_GET['id'];
     $qdata = mysqli_query($connect_db,"select * from tb_kt_barang where id_kt_barang=$idkey") or die(mysqli_error($connect_db));
     $data = mysqli_fetch_array($qdata);
-    $aktif = $data['made_from']; //value dari tabel di kolom is_active
+    /*$aktif = $data['made_from']; //value dari tabel di kolom is_active
 	if($aktif == 1){
 		$check = "checked";
 	} 
 	else{
 		$check = "";
-	}
+	}*/
 }else if (isset($_GET['act']) && ($_GET['act']== "save")){
     /*echo "Proses berhasil" ;*/
     $idkatbarang = $_POST['id_kat_barang'] ;
@@ -31,8 +31,8 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
     }else{
         $aktif = "export" ;
     }
-    $qinsert = mysqli_query($connect_db,"insert into tb_kt_barang(id_kt_barang,kategori_barang,made_from) 
-    values ('$idkatbarang','$katbarang','$aktif')") or die(mysqli_error($connect_db));
+    $qinsert = mysqli_query($connect_db,"insert into tb_kt_barang(id_kt_barang,kategori_barang) 
+    values ('$idkatbarang','$katbarang')") or die(mysqli_error($connect_db));
     if($qinsert){
 		//ketik proses simpan berhasil
 		header("Location: http://localhost/pro_administrasitoko/admin/home.php?modul=mod_kt_barang");
@@ -48,7 +48,7 @@ if (isset($_GET['act']) && ($_GET['act']== "add")){
 	}
 	//query untuk simpan
 	$qinsert = mysqli_query($connect_db, 
-			"UPDATE tb_kt_barang SET id_kt_barang='$in_idkatbarang', kategori_barang='$in_katbarang', made_from='$aktif' WHERE id_kt_barang='$in_idkatbarang'")
+			"UPDATE tb_kt_barang SET id_kt_barang='$in_idkatbarang', kategori_barang='$in_katbarang' WHERE id_kt_barang='$in_idkatbarang'")
 			or die (mysqli_error($connect_db));
 	if($qinsert){
 		//ketik proses simpan update berhasil
