@@ -7,7 +7,6 @@ if(!isset($_GET['act'])){
     <tr> 
         <th> ID kategori barang</th>
         <th> Kategori Barang </th>
-        <th> Asal barang </th>
         <th> Action </th>
     </tr>
     <?php
@@ -17,7 +16,6 @@ if(!isset($_GET['act'])){
     <tr>
         <td><?php echo $row['id_kt_barang'];?></td>
         <td><?=$row['kategori_barang']; ?></td>
-        <td><?=$row['made_from']; ?></td>
         <td>
             <div class="d-grid gap-1 d-md-block">
             <a href="?modul=mod_kt_barang&act=edit&id=<?= $row['id_kt_barang']; ?>" class="btn btn-xs btn-primary"> <i class="bi bi-pencil-square" > </i> edit </a>
@@ -105,9 +103,6 @@ else if (isset($_GET['act']) && ($_GET['act']== "edit")){
     <div class="row pt-2">
     <div class="col-md-2"> 
   </div>  
-  <div class="col-md-5"> 
-   <input type="checkbox" name="ck_aktif" <?php echo $data['made_from'] == "import" ? "checked" : "" ?>> Import
-    </div>
     <div class="col-md-1"></div>
     </div>
     <div class="row pt-2">
