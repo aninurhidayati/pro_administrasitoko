@@ -5,7 +5,9 @@ body{
    background-size: cover;
    background-position: center;
    font-family: sans-serif;
-   height: 100vh; 
+   height: 110vh;
+   background-repeat: no-repeat;
+
 }
 .login-box{
  width: 320px;
