@@ -10,6 +10,6 @@
         while($row = mysqli_fetch_array($qry_menu)){
        ?>
        <a href="?modul=<?php echo $row['folder_submenu']?>">
-           <li class="list-group-item"><?php echo $row['nama_submenu'];?></li>
+           <li class="list-group-item list-group-item-action list-group-item-warning text-right"><?php echo $row['nama_submenu'];?> <b><i class="bi bi-arrow-right"></i> </b></li>
         </a>  
             <?php } ?>

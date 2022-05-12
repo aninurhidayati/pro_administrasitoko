@@ -19,20 +19,15 @@ require_once('../config/config.php') ;
 <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#" style="color:white ;"> <b>  Selamat Datang Admin...</b></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto mb-2 mb">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../admin/index.php" style="color: white;">  <b> | Sign Out</b></a>
         </li>
       </ul>
-    </div>
   </div>
 </nav>
-   <div class="row pt-4">
-       <div class="col-md-2" style="background-color: blue;"> 
+   <div class="row pt-5">
+       <div class="col-md-2 pt-2"> 
         <div> 
             <?php
            include_once('menu.php') ;
@@ -49,9 +44,9 @@ require_once('../config/config.php') ;
        <div class="col-md-1"> 
    </div>
 </body>
-<footer class="footer bg-dark" style="position:fixed; bottom:0 ; " >
-    <div class="row">
-      <b><h6 style="color:white;"> <i class="bi bi-code"> </i> Design by Arudi </h6></b> 
+<footer class="footer bg-primary" style="position:fixed; bottom:0 ; " >
+    <div class="d-flex justify-content-center">
+      <b><h6 style="color:white;"> <i class="bi bi-code"> </i> Design by Arudi and Mad <i class="bi bi-code"> </i></h6></b> 
     </div>
 </footer>
 </html>

@@ -84,7 +84,8 @@ if(!isset($_GET['act'])){
    </div>  
     <div class="col-md-5"> 
     <div class="d-grid gap-2 d-md-block">
-    <a href="?modul=mod_userlogin" type="cancel" class="btn btn-secondary"><i class="bi bi-door-open"></i> Kembali</a>
+    <a href="?modul=mod_userlogin" type="cancel" class="btn btn-warning"><i class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
+    <button class="btn btn-secondary" type="reset" ><i class="bi bi-x" name="reset" > </i> Batal </button>
     <button class="btn btn-primary" type="submit"><i class="bi bi-download" name="simpan" > </i> Simpan </button>
     </div>
     <div class="col-md-1"></div>
