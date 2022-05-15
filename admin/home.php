@@ -26,6 +26,7 @@ require_once('../config/config.php') ;
       </ul>
   </div>
 </nav>
+    <br><br>
    <div class="row pt-5">
        <div class="col-md-2 pt-2"> 
         <div> 
