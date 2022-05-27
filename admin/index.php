@@ -42,14 +42,14 @@
             <!-- User input -->
             <div class="form-outline mb-4">
               <input type="text" name="username" id="username" class="form-control form-control-lg"
-                placeholder="Enter a valid username" />
+                placeholder="Sisipake nami pangguna sing bener" />
               <label class="form-label" for="username">Username</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" name="password" id="password" class="form-control form-control-lg"
-                placeholder="Enter password" />
+                placeholder="Sisipake sandi jenengan" />
               <label class="form-label" for="password">Password</label>
             </div>
             <div class="d-flex row justify-content-between align-items-">

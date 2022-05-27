@@ -142,7 +142,7 @@
       <label for="username" class="form-label" name="jlm"> Jumlah </label>
     </div>  
     <div class="col-md-5"> 
-      <input type="text "name="jml" class="form-control" value="<?php echo $data['jumlah']; ?>">  
+      <input type="number"name="jml" class="form-control" value="<?php echo $data['jumlah']; ?>">  
       </div>
       <div class="col-md-1"></div>
       </div>
